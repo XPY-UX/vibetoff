@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a0a0d">
+  <title>Vibet Offsets</title>
+  <meta name="description" content="Vibet Offsets — internal & external Roblox offsets, FFlags, and versioned file releases synced from imtheo's RbxDumperV2.">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="shell">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Vibet Offsets">
+        <span class="brand-mark">V</span>
+        <span class="brand-text">vibet<span class="brand-sub"> offsets</span></span>
+      </a>
+      <nav class="topbar-right">
+        <a class="source-pill" id="imtheoSource" href="https://offsets.imtheo.lol" target="_blank" rel="noopener" style="display:none" title="Offset source: imtheo RbxDumperV2">
+          <span class="source-dot"></span>
+          imtheo
+        </a>
+        <span class="status-pill">
+          <span class="dot" id="statusDot"></span>
+          <span id="statusText">checking</span>
+        </span>
+        <a class="gh-btn" href="https://git.imtheo.lol/theo/RbxDumperV2" target="_blank" rel="noopener" aria-label="Dumper source (imtheo)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.091.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.341-3.369-1.341-.454-1.154-1.11-1.461-1.11-1.461-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.577.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        </a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>RELEASE DIRECTORY</span>
+      </div>
+      <h1>Vibet <em>Offsets</em></h1>
+      <p class="hero-sub">Internal &amp; external offsets, FFlags &amp; versioned releases — synced from <a class="hero-link" href="https://offsets.imtheo.lol" target="_blank" rel="noopener">imtheo's RbxDumperV2</a>.</p>
+
+      <div class="meta-row">
+        <div class="meta-card">
+          <div class="meta-icon">⊕</div>
+          <div class="meta-body">
+            <span class="meta-label">RBX VERSION</span>
+            <strong id="versionText">Loading…</strong>
+          </div>
+          <span class="meta-badge" id="releaseBadge">SYNCING</span>
+        </div>
+        <div class="meta-card meta-small">
+          <div class="meta-icon">✦</div>
+          <div class="meta-body">
+            <span class="meta-label">FILES</span>
+            <strong id="totalFiles">—</strong>
+          </div>
+        </div>
+        <div class="meta-card meta-small">
+          <div class="meta-icon">⌚</div>
+          <div class="meta-body">
+            <span class="meta-label">SYNCED</span>
+            <strong id="updatedAt">—</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFSET BROWSER -->
+    <section class="offsets-section" id="offsetsSection" style="display:none">
+      <div class="section-head">
+        <div>
+          <span class="kicker">OFFSET BROWSER</span>
+          <h2>Browse Offsets <span id="offsetInfo" class="offset-count-inline"></span></h2>
+        </div>
+        <div class="offset-controls">
+          <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="6"/><path d="M15 15l3 3"/></svg>
+            <input class="search-input" id="offsetSearch" type="text" placeholder="Search name, value, file…" autocomplete="off" spellcheck="false">
+            <button class="search-clear" id="searchClear" aria-label="Clear">✕</button>
+          </div>
+          <div class="tab-group" id="offsetTabs" role="tablist">
+            <button class="tab active" data-tab="all"      role="tab">All</button>
+            <button class="tab"        data-tab="fflags"   role="tab">FFlags</button>
+            <button class="tab"        data-tab="external" role="tab">External</button>
+            <button class="tab"        data-tab="internal" role="tab">Internal</button>
+            <button class="tab"        data-tab="other"    role="tab">Misc</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="offsetTable" class="offset-table-wrap">
+        <table class="offset-table">
+          <thead>
+            <tr>
+              <th class="col-type">Type</th>
+              <th class="col-name">Name</th>
+              <th class="col-value">Value</th>
+              <th class="col-action"></th>
+            </tr>
+          </thead>
+          <tbody id="offsetBody"></tbody>
+        </table>
+        <div class="offset-empty" id="offsetEmpty" style="display:none">
+          <span class="empty-icon">⊘</span>
+          <strong>No offsets match</strong>
+          <p>Try a different filter or clear the search.</p>
+        </div>
+      </div>
+
+      <div class="raw-panel" id="rawPanel" style="display:none">
+        <div class="raw-header">
+          <span class="kicker">RAW FILE</span>
+          <div class="raw-actions">
+            <button class="btn-ghost" id="rawCopyAll">Copy all</button>
+            <button class="btn-ghost" id="rawDownload">Download</button>
+          </div>
+        </div>
+        <pre id="rawContent" class="raw-code"></pre>
+      </div>
+    </section>
+
+    <!-- FILE DIRECTORY -->
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <span class="kicker">FILE DIRECTORY</span>
+          <h2>Downloads</h2>
+        </div>
+        <span id="fileCount" class="count-pill">0 FILES</span>
+      </div>
+      <div id="groups" class="groups">
+        <div class="empty-state">
+          <span class="empty-icon">⌁</span>
+          <strong>Loading files</strong>
+          <p>Fetching the latest published manifest…</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-brand"><span class="brand-mark small">V</span> VIBET OFFSETS</div>
+      <span id="footerVersion" class="footer-ver">Release directory</span>
+      <span class="footer-note">Offset data sourced from <a href="https://offsets.imtheo.lol" target="_blank" rel="noopener">imtheo RbxDumperV2</a>.</span>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

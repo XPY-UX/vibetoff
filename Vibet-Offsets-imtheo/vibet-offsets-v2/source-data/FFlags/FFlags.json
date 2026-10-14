@@ -1,0 +1,11 @@
+{
+  "FFlagDebugGraphicsPreferVulkan": true,
+  "FFlagDebugGraphicsPreferMetal": false,
+  "DFFlagDebugSkipDPIScale": true,
+  "FIntRenderLocalLightUpdatesMax": 8,
+  "FIntRenderLocalLightUpdatesMin": 2,
+  "FIntRenderShadowIntensity": 0,
+  "FStringPartColor3ui8": "0 0 0",
+  "FFlagNewCameraControls": true,
+  "FIntGraphicsSkylightIntensityMultiplier": 0
+}

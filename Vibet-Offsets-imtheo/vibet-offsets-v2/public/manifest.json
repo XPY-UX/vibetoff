@@ -1,0 +1,43 @@
+{
+  "version": "build-20261014-014304-utc",
+  "updatedAt": "2026-10-14T01:43:04.512655+00:00",
+  "fileCount": 4,
+  "groups": {
+    "External Offsets": [
+      {
+        "name": "Offsets.hpp",
+        "url": "/downloads/External Offsets/Offsets.hpp",
+        "size": 1703,
+        "sha256": "45d1f3e5c283f4aec3ac8011dd35ebed0139107349b8c40510294d3ffe047767",
+        "kind": "external"
+      }
+    ],
+    "FFlags": [
+      {
+        "name": "FFlags.json",
+        "url": "/downloads/FFlags/FFlags.json",
+        "size": 351,
+        "sha256": "198af8d8d4518511b7520f76ecfcfb359829c99c42716251ad95f91d50ff7bbc",
+        "kind": "other"
+      }
+    ],
+    "Internal Offsets": [
+      {
+        "name": "Offsets.cs",
+        "url": "/downloads/Internal Offsets/Offsets.cs",
+        "size": 970,
+        "sha256": "d2a871eb89522a0a39440afb5633bed82a5dcff64049016dfb1ed43842e202c0",
+        "kind": "internal"
+      }
+    ],
+    "Misc": [
+      {
+        "name": "_imtheo_meta.json",
+        "url": "/downloads/_imtheo_meta.json",
+        "size": 133,
+        "sha256": "775b55964aff906221ad185371983ddef63be9d3240b882b30be591bd3d2b613",
+        "kind": "other"
+      }
+    ]
+  }
+}
